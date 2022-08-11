@@ -1,0 +1,22 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Tasks</h1>
+<div id="tasks">
+  <table>
+    <tr>
+      <th>Task Name</th>
+      <th>Due Date</th>
+      <th>View Task</th>
+    </tr>
+  <% @tasks.each do |task| %>
+    <tr>
+      <td><%= task.name %></td>
+      <td><%= task.due_date.strftime("%d/%m/%Y %I:%M %P") %></td>
+      <td><%= link_to "Show this task", task %></td>
+    </tr>
+  <% end %>
+  </table>
+</div>
+<div>
+<%= link_to "Home", root_path  %> | <%= link_to "Add New task", new_task_path %> 
+</div>

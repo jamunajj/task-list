@@ -1,0 +1,18 @@
+<h1>Task Details: <%= task.name %></h1>
+<div id="<%= dom_id task %>" class="task_details">
+  <p>
+    <strong>Name:</strong>
+    <%= task.name %>
+  </p>
+
+  <p>
+    <strong>Description:</strong>
+    <%= task.description %>
+  </p>
+
+  <p>
+    <strong>Due date:</strong>
+    <%= task.due_date.strftime("%d/%m/%Y %I:%M %P") %>
+  </p>
+
+</div>

@@ -1,0 +1,125 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+html, body {
+font: 15px 'Poppins';
+margin:  0 auto;
+}
+
+.container {
+margin: 50px auto;
+display:  flex;
+flex-direction: column;
+align-items: center;
+align-content: center;
+height: 100vh;
+width: 100%;
+max-width: calc(100% - 10px);
+}
+
+h1, h2, h3, h4, h5, h6 {
+text-align: center;
+}
+
+h1{
+font-size: 25px;
+color: #405cf5;
+}
+
+a{
+color: #405cf5;
+}
+
+a:hover{
+opacity: 0.8;
+}
+
+.btn, input[type="submit"], input[type="button"], button {
+background-color: #405cf5;
+border: none;
+border-radius: 6px;
+color: #fff;
+cursor: pointer;
+font-size: 100%;
+margin: 12px 0 0;
+overflow: hidden;
+padding: 10px 25px;
+position: relative;
+text-align: center;
+text-transform: none;
+width: 100%;
+text-decoration: none;
+}
+
+.btn:disabled {
+cursor: default;
+}
+
+.btn:hover, input[type="submit"]:hover, input[type="button"]:hover, button:hover {
+opacity: 0.8;
+}
+
+form div{
+padding:0 0 15px;
+}
+
+form input[type="text"], textarea, input[type="datetime-local"]{
+width: 300px;
+padding: 5px;
+line-height: 1.5;
+font: 14px 'Poppins';
+}
+
+textarea {
+resize: none;
+min-height: 150px;
+}
+
+table{
+width: 100%;
+margin: 0 auto 20px;
+}
+
+table, tr, td, th{
+border: 1px solid #405cf5;
+border-collapse: collapse;
+}
+
+th, td{
+padding: 10px 10px;
+}
+
+.task_details{
+border: 1px solid #405cf5;
+padding: 10px 0;
+min-width: 300px;
+margin: 0 auto 30px;
+}
+
+.task_details p{
+padding: 10px;
+font-size: 15px;
+}
+
+.home_btns{
+margin:15px auto;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.home_btns a{
+margin:5px;
+}
