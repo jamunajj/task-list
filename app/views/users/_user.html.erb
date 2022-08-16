@@ -1,0 +1,39 @@
+<h1>User Details: <%= User.full_name(user.first_name, user.last_name) %></h1>
+<div id="<%= dom_id user %>" class="details user_details">
+  <p>
+    <strong>Full name:</strong>
+    <%= User.full_name(user.first_name, user.last_name) %>
+  </p>
+<p>
+    <strong>Profile:</strong>
+    <%= user.profile %>
+  </p>
+
+  <p>
+    <strong>Date of Birth:</strong>
+    <%= user.dob.strftime("%d-%b-%Y") %>
+  </p>
+</div>
+
+<h1>Tasks of <%= User.full_name(user.first_name, user.last_name) %></h1>
+<div id="tasks">
+  <table>
+    <tr>
+      <th>Task Name</th>
+      <th>Due Date</th>
+      <th>Task Status</th>
+      <th>View Task</th>
+    </tr>
+  <% @user_tasks.each do |task| %>
+    <tr>
+      <td><%= link_to task.name, task %></td>
+      <td align="center"><%= task.due_date.strftime("%d-%b-%Y %I:%M %P") %></td>
+      <td><%= Task.get_status_text(task.status) %></td>
+      <td><%= link_to "View Task", task %></td>
+    </tr>
+  <% end %>
+  <% if(@user_tasks.length == 0) %>
+    <tr><td colspan="4" align="center">No tasks assigned to this user.</td>
+  <% end %>
+  </table>
+</div>

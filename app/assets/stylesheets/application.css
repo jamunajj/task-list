@@ -40,10 +40,11 @@ color: #405cf5;
 
 a{
 color: #405cf5;
+text-decoration: none;
 }
 
 a:hover{
-opacity: 0.8;
+color: #0620aa;
 }
 
 .btn, input[type="submit"], input[type="button"], button {
@@ -69,27 +70,38 @@ cursor: default;
 
 .btn:hover, input[type="submit"]:hover, input[type="button"]:hover, button:hover {
 opacity: 0.8;
+color:  #FFF;
 }
 
 form div{
 padding:0 0 15px;
 }
 
-form input[type="text"], textarea, input[type="datetime-local"]{
+input[type="text"], textarea, input[type="datetime-local"], select{
 width: 300px;
 padding: 5px;
 line-height: 1.5;
 font: 14px 'Poppins';
+border: 1px solid #aaa;
+border-collapse: collapse;
+border-radius: 3px;
+}
+
+select{
+background-color: transparent;
+width: 314px;
 }
 
 textarea {
 resize: none;
-min-height: 150px;
+min-height: 120px;
 }
 
 table{
 width: 100%;
 margin: 0 auto 20px;
+max-width: calc(100% - 20px);
+min-width: 750px;
 }
 
 table, tr, td, th{
@@ -101,17 +113,24 @@ th, td{
 padding: 10px 10px;
 }
 
-.task_details{
+.details{
 border: 1px solid #405cf5;
+border-radius: 5px;
 padding: 10px 0;
 min-width: 300px;
 margin: 0 auto 30px;
+width: 75%;
+max-width: 600px;
 }
 
-.task_details p{
+.details p{
 padding: 10px;
 font-size: 15px;
 }
+
+.user_details p{
+padding: 5px 10px;
+} 
 
 .home_btns{
 margin:15px auto;
@@ -122,4 +141,49 @@ align-items: center;
 
 .home_btns a{
 margin:5px;
+}
+
+.return_to_home{
+float: right;
+}
+
+.errors{
+display:  none;
+}
+
+.errors, .field_with_errors .message, .flash_message.error{
+color: #e63e3e;
+}
+
+.flash_message.warning{
+color: #ff9600;
+}
+
+.flash_message.info{
+color: #0620aa;
+}
+
+.notice{
+color: #228B22;
+}
+
+.errors h2{
+font-size: 16px;
+}
+
+.field_with_errors .message{
+clear: both;
+display: flex;
+margin: 5px auto;
+}
+
+.flash_message {
+margin: 20px auto 0;
+}
+
+@media only screen and (max-width: 768px) {
+.details, table{
+width: 95%;
+max-width: 100%;
+}
 }

@@ -1,6 +1,6 @@
-<%= form_with(model: task) do |form| %>
+<%= form_with(model: task, validate: true) do |form| %>
   <% if task.errors.any? %>
-    <div style="color: red">
+    <!--div class="errors">
       <h2><%= pluralize(task.errors.count, "error") %> prohibited this task from being saved:</h2>
 
       <ul>
@@ -8,7 +8,7 @@
           <li><%= error.full_message %></li>
         <% end %>
       </ul>
-    </div>
+    </div-->
   <% end %>
 
   <div>
@@ -26,6 +26,20 @@
     <%= form.datetime_field :due_date, :required => true %>
   </div>
 
+  <div>
+    <%= form.label :status, style: "display: block" %>
+    <%= form.select(:status, options_for_select([['Pending', false],['Completed', true]], {:selected => @task.status}), :prompt => "Select", :required => true)  %>
+  </div>
+  <div>
+    <% @users = User.all %>
+    <%= form.label "Assign To", style: "display: block" %>
+    <%= collection_select "task", 
+    "user_id",
+    @users.collect { |t| [ t.id, User.full_name(t.first_name, t.last_name) ] },
+    :first, 
+    :last,  
+    { :selected => @task.user_id, prompt: "Select a user", :required => true } %>
+  </div>
   <div>
     <%= form.submit %>
   </div>

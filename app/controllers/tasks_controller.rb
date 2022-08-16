@@ -3,20 +3,23 @@ class TasksController < ApplicationController
 
   # GET /tasks or /tasks.json
   def index
-    @tasks = Task.all
+    @tasks = Task.joins("INNER JOIN users ON tasks.user_id = users.id").select("tasks.*, users.first_name, users.last_name")
   end
 
   # GET /tasks/1 or /tasks/1.json
   def show
+    #@task = Task.joins("INNER JOIN users ON tasks.user_id = users.id where tasks.id = #{params[:id]}").select("tasks.*, users.first_name, users.last_name")
   end
 
   # GET /tasks/new
   def new
     @task = Task.new
+    #@users = User.all
   end
 
   # GET /tasks/1/edit
   def edit
+    #@users = User.all
   end
 
   # POST /tasks or /tasks.json
@@ -57,6 +60,8 @@ class TasksController < ApplicationController
     end
   end
 
+  
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_task
@@ -65,6 +70,6 @@ class TasksController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def task_params
-      params.require(:task).permit(:name, :description, :due_date)
+      params.require(:task).permit(:name, :description, :due_date, :status, :user_id)
     end
 end

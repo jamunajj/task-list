@@ -1,22 +1,29 @@
-<p style="color: green"><%= notice %></p>
-
+<!--p class="notice"><%= notice %></p-->
 <h1>Tasks</h1>
 <div id="tasks">
   <table>
     <tr>
       <th>Task Name</th>
       <th>Due Date</th>
+      <th>Assigned To</th>
+      <th>Task Status</th>
       <th>View Task</th>
     </tr>
   <% @tasks.each do |task| %>
     <tr>
-      <td><%= task.name %></td>
-      <td><%= task.due_date.strftime("%d/%m/%Y %I:%M %P") %></td>
-      <td><%= link_to "Show this task", task %></td>
+      <td><%= link_to task.name, edit_task_path(task) %></td>
+      <td align="center"><%= task.due_date.strftime("%d-%b-%Y %I:%M %P") %></td>
+      <td><%= User.full_name(task.first_name, task.last_name) %></td>
+      <td><%= Task.get_status_text(task.status)%></td>
+      <td><%= link_to "View Task", task %></td>
     </tr>
   <% end %>
+  <% if(@tasks.length == 0) %>
+    <tr><td colspan="4" align="center">No tasks added.</td>
+  <% end %>
+  
   </table>
 </div>
 <div>
-<%= link_to "Home", root_path  %> | <%= link_to "Add New task", new_task_path %> 
+<%= link_to "Add New task", new_task_path %> 
 </div>

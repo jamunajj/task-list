@@ -48,6 +48,17 @@ gem "bootsnap", require: false
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
 
+#Use Webpacker for Javascript
+gem "webpacker", "~> 3.0"
+
+gem 'psych', '< 4'
+
+#Use JQuery
+gem 'jquery-rails'
+
+#Use Client side valiation for form valiations
+gem 'client_side_validations'
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri mingw x64_mingw ]

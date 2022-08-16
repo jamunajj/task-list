@@ -7,9 +7,18 @@
     <%= csp_meta_tag %>
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet' type='text/css'>
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    
   </head>
   <body>
     <div class="container">
+      <% if !current_page?(controller: 'articles', action: 'index') %>
+        <div class="return_to_home"><%= link_to "Return to Home", root_path  %></div>
+      <% end %>
+      <% flash.each do |type, msg| %>
+        <div class="flash_message <%= type %>">
+          <p><%= msg %></p>
+        </div>
+      <% end %>
       <%= yield %>
     </div>
   </body>

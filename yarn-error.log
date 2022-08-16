@@ -1,0 +1,35 @@
+Arguments: 
+  C:\Program Files\nodejs\node.exe C:\Users\JAMUNA\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add @rails/webpacker@3.5 --tilde
+
+PATH: 
+  D:/hash-agile/Ruby31/lib/ruby/gems/3.1.0/bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\nodejs\;C:\ProgramData\chocolatey\bin;C:\Program Files (x86)\Sudowin\Clients\Console;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\msys64\mingw64\bin;D:\PostgreSQL\14\bin;D:\hash-agile\Ruby31\bin;C:\Users\JAMUNA\AppData\Local\Microsoft\WindowsApps;D:\wamp\bin\php\php7.4.9;C:\Users\JAMUNA\AppData\Local\ComposerSetup\bin;C:\Users\JAMUNA\AppData\Roaming\Composer\vendor\bin;C:\Users\JAMUNA\AppData\Roaming\npm
+
+Yarn version: 
+  1.22.19
+
+Node version: 
+  14.15.0
+
+Platform: 
+  win32 x64
+
+Trace: 
+  Error: https://registry.yarnpkg.com/core-js/-/core-js-2.6.12.tgz: ESOCKETTIMEDOUT
+      at ClientRequest.<anonymous> (C:\Users\JAMUNA\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:141517:19)
+      at Object.onceWrapper (events.js:421:28)
+      at ClientRequest.emit (events.js:315:20)
+      at TLSSocket.emitRequestTimeout (_http_client.js:784:9)
+      at Object.onceWrapper (events.js:421:28)
+      at TLSSocket.emit (events.js:327:22)
+      at TLSSocket.Socket._onTimeout (net.js:483:8)
+      at listOnTimeout (internal/timers.js:554:17)
+      at processTimers (internal/timers.js:497:7)
+
+npm manifest: 
+  No manifest
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

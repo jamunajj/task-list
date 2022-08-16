@@ -1,0 +1,28 @@
+<!--p class="notice"><%= notice %></p-->
+
+<h1>Users</h1>
+
+<div id="users">
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Date of Birth</th>
+      <th>View User</th>
+    </tr>
+  <% @users.each do |user| %>
+    <tr>
+      <td><%= link_to User.full_name(user.first_name,user.last_name), edit_user_path(user) %></td>
+      <td align="center"><%= user.dob.strftime("%d-%b-%Y") %></td>
+      <td align="center"><%= link_to "View User", user %></td>
+    </tr>
+  <% end %>
+  <% if(@users.length == 0) %>
+    <tr><td colspan="3" align="center">No users in the database.</td>
+  <% end %>
+  </table>
+</div>
+<div>
+<%= link_to "New user", new_user_path %> 
+</div>
+
+
